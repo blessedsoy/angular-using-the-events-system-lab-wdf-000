@@ -8,6 +8,7 @@ function Contact() {
 		].join(''),
 		controller: function ($rootScope) {
 			this.remove = function (id) {
+				$rootScope.$broadcast('remove', id);
 				
 			};
 		},
@@ -22,3 +23,5 @@ function Contact() {
 angular
 	.module('app')
 	.directive('contact', Contact);
+
+
